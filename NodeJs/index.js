@@ -66,4 +66,18 @@
 // else
 // {
 //     console.log("invalid command");
+// } 
+
+const fs = require('fs');
+const path = require('path');
+// const dirPath = path.join(__dirname,'files');
+
+// for(i=0;i<5;i++)
+// {
+//     fs.writeFileSync(dirPath+"/hello"+i+".txt","My name is priyanshu")
 // }
+
+const dirPath = path.join(__dirname,'files');
+const filePath = `${dirPath}/hello.txt`;
+
+fs.writeFileSync(filePath,"My name is priyanshu");
