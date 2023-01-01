@@ -1,0 +1,36 @@
+.x{
+    color: rgb(255, 145, 0);
+    text-align: center;
+}
+
+nav{
+    height: 70px;
+    display: flex;
+    padding: 29px 50px;
+}
+
+.nav-logo{
+    max-width: 100%;
+}
+
+section{
+    padding: 20px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-photo{
+    max-width: 500px;
+    align-self: center;
+}
+
+.main-header{
+    margin-bottom: 20px;
+}
+
+.main-text{
+    margin-top: 0px;
+}

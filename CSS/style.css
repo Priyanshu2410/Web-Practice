@@ -1,0 +1,107 @@
+/* body{
+    color: brown;
+}
+h1{
+    color: aqua;
+}
+h2{
+    color: chartreuse;
+}
+#head{
+    color: black;
+}
+
+.para{
+    color: rgb(93, 30, 210);
+} */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+
+body{
+    font-family: 'PT Serif', serif;
+}
+
+hr{
+    margin: 2rem 0px;
+}
+
+:root {
+    --primary-color:red;
+}
+
+.container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container continer-center{
+    max-width: 600px;
+    margin: auto;
+}
+.containera-center{
+    max-width: ;
+}
+
+/*link */
+
+.link{
+    text-decoration: none ;
+    padding: 0.5rem 1rem ;  
+    /* top right bottam left */
+}
+
+.link{
+    background-color: var(--primary-color);
+    color: aliceblue;
+}
+
+.secondary-link{
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    border:1px solid blue;
+}
+
+.bullet{
+    list-style: none;
+}
+
+.inline{
+    display: inline;
+    padding: 0px 2rem;
+}
+
+
+/* nav */
+
+.navigation{
+    background-color: aqua;
+    color: blue;
+    padding: 2rem;
+}
+
+.navigation .nav-brand{
+    font-weight: bold;
+}
+
+.navigation .nav-pills{
+    text-align: right;
+}
+
+.navigation .link{
+    color: aliceblue;
+}
+
+.navigation .link-active{
+    font-weight: bold;
+}
+
+/* header */
+
+.hero{
+    padding: 2rem;
+}
+
+.hero .hero-img{
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
