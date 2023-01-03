@@ -85,16 +85,35 @@
 const express = require('express');
 const app = express();
 
-app.get('',(req,resp)=>{
-    resp.send('heloo world');
-})
+// app.get('',(req,resp)=>{
+//      console.log("data sent by browser",req.query.name)
+//     resp.send(`
+//     <h1>heloo world</h1>
+//     <a href="/about">go to about page</a>
+//     `);
+// })
 
-app.get('/about',(req,resp)=>{
-    resp.send('heloo world about page');
-})
+// app.get('/about',(req,resp)=>{
+//     resp.send(`
+//     <input type="text" placeholder="user name"/>
+//     <button>submit</button>
+//     <a href="/">go to home page</a>
+//     `);
+// })
 
-app.get('/login',(req,resp)=>{
-    resp.send('heloo world login page');
+// app.get('/login',(req,resp)=>{
+//     resp.send('heloo world login page');
+// })
+
+const path = require('path');
+const publicPath = path.join(__dirname,'public');
+
+app.use(express.static(publicPath));
+app.get('/about',(_,resp)=>{
+    resp.sendFile(`${publicPath}/about.html`);
+})
+app.get('*',(_,resp)=>{
+    resp.sendFile(`${publicPath}/404.html`);
 })
 
 
