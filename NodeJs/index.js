@@ -68,8 +68,8 @@
 //     console.log("invalid command");
 // } 
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 // const dirPath = path.join(__dirname,'files');
 
 // for(i=0;i<5;i++)
@@ -77,7 +77,25 @@ const path = require('path');
 //     fs.writeFileSync(dirPath+"/hello"+i+".txt","My name is priyanshu")
 // }
 
-const dirPath = path.join(__dirname,'files');
-const filePath = `${dirPath}/hello.txt`;
+// const dirPath = path.join(__dirname,'files');
+// const filePath = `${dirPath}/hello.txt`;
 
-fs.writeFileSync(filePath,"My name is priyanshu");
+// fs.writeFileSync(filePath,"My name is priyanshu");
+
+const express = require('express');
+const app = express();
+
+app.get('',(req,resp)=>{
+    resp.send('heloo world');
+})
+
+app.get('/about',(req,resp)=>{
+    resp.send('heloo world about page');
+})
+
+app.get('/login',(req,resp)=>{
+    resp.send('heloo world login page');
+})
+
+
+app.listen(5000);
