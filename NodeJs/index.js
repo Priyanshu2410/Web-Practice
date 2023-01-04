@@ -82,8 +82,8 @@
 
 // fs.writeFileSync(filePath,"My name is priyanshu");
 
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 
 // app.get('',(req,resp)=>{
 //      console.log("data sent by browser",req.query.name)
@@ -105,16 +105,53 @@ const app = express();
 //     resp.send('heloo world login page');
 // })
 
-const path = require('path');
-const publicPath = path.join(__dirname,'public');
+// const path = require('path');
+// const publicPath = path.join(__dirname,'public');
 
-app.use(express.static(publicPath));
-app.get('/about',(_,resp)=>{
-    resp.sendFile(`${publicPath}/about.html`);
-})
-app.get('*',(_,resp)=>{
-    resp.sendFile(`${publicPath}/404.html`);
-})
+// app.use(express.static(publicPath));
+// app.get('/about',(_,resp)=>{
+//     resp.sendFile(`${publicPath}/about.html`);
+// })
+// app.get('*',(_,resp)=>{
+//     resp.sendFile(`${publicPath}/404.html`);
+// })
 
+// app.set('view engine','ejs');
+// app.get('/profile',(_,resp)=>{
+//     resp.render('profile');
+// });
+
+// app.listen(5000);
+
+
+
+
+
+const express = require('express');
+const app = express();
+
+const reqFilter = (req,resp,next)=>{
+    if(!req.query.age)
+    {
+        resp.send('age is required');
+    }
+    else if(req.query.age<18)
+    {
+        resp.send('age must be greater than 18');
+    }
+    else
+    {
+        next();
+    }
+   
+}
+
+app.use(reqFilter);
+app.get('/',(req,resp)=>{
+    resp.send('welcome to home page');
+} )
+app.get('/user',(req,resp)=>{
+    resp.send('welcome to user page');
+} )
 
 app.listen(5000);
