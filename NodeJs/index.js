@@ -146,12 +146,15 @@ const reqFilter = (req,resp,next)=>{
    
 }
 
-app.use(reqFilter);
-app.get('/',(req,resp)=>{
+// app.use(reqFilter);
+app.get('/',reqFilter,(req,resp)=>{
     resp.send('welcome to home page');
 } )
 app.get('/user',(req,resp)=>{
     resp.send('welcome to user page');
+} )
+app.get('/about',(req,resp)=>{
+    resp.send('welcome to about page');
 } )
 
 app.listen(5000);
