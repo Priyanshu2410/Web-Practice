@@ -174,18 +174,20 @@
 //     console.log(err);
 //   });
 
-const {MongoClient} = require('mongodb')
-const url= 'mongodb://127.0.0.1:27017';
-const databaseName='e-com'
-const client= new MongoClient(url);
 
-async function getData()
-{
-    let result = await client.connect();
-    db= result.db(databaseName);
-    collection = db.collection('Products');
-    let data = await collection.find({}).toArray();
-    console.log(data)
+
+
+const getData = require('./mongodb')
+
+const main = async ()=>{
+    let data = await getData();
+    data=await data.find().toArray();
+    console.log(data);
 }
+main();
 
-getData();
+// getData().then((resp)=>{
+//     resp.find({brand: 'redmi'}).toArray().then((data)=>{
+//         console.log(data)
+//     })
+// })
