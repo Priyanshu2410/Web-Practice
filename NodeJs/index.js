@@ -127,34 +127,65 @@
 
 
 
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 
-const reqFilter = (req,resp,next)=>{
-    if(!req.query.age)
-    {
-        resp.send('age is required');
-    }
-    else if(req.query.age<18)
-    {
-        resp.send('age must be greater than 18');
-    }
-    else
-    {
-        next();
-    }
+// const reqFilter = (req,resp,next)=>{
+//     if(!req.query.age)
+//     {
+//         resp.send('age is required');
+//     }
+//     else if(req.query.age<18)
+//     {
+//         resp.send('age must be greater than 18');
+//     }
+//     else
+//     {
+//         next();
+//     }
+
+
    
+// }
+
+// // app.use(reqFilter);
+// app.get('/',reqFilter,(req,resp)=>{
+//     resp.send('welcome to home page');
+// } )
+// app.get('/user',(req,resp)=>{
+//     resp.send('welcome to user page');
+// } )
+// app.get('/about',(req,resp)=>{
+//     resp.send('welcome to about page');
+// } )
+
+// app.listen(5000);
+
+// const mongoose = require("mongoose");
+
+// const mongo = mongoose
+//   .connect(
+//     "mongodb://127.0.0.1:27017"
+//   )
+//   .then(() => {
+//     console.log("connected");
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+const {MongoClient} = require('mongodb')
+const url= 'mongodb://127.0.0.1:27017';
+const databaseName='e-com'
+const client= new MongoClient(url);
+
+async function getData()
+{
+    let result = await client.connect();
+    db= result.db(databaseName);
+    collection = db.collection('Products');
+    let data = await collection.find({}).toArray();
+    console.log(data)
 }
 
-// app.use(reqFilter);
-app.get('/',reqFilter,(req,resp)=>{
-    resp.send('welcome to home page');
-} )
-app.get('/user',(req,resp)=>{
-    resp.send('welcome to user page');
-} )
-app.get('/about',(req,resp)=>{
-    resp.send('welcome to about page');
-} )
-
-app.listen(5000);
+getData();
