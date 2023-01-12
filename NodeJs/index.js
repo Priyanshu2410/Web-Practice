@@ -177,17 +177,48 @@
 
 
 
-const getData = require('./mongodb')
+// const getData = require('./mongodb')
 
-const main = async ()=>{
-    let data = await getData();
-    data=await data.find().toArray();
+// const main = async ()=>{
+//     let data = await getData();
+//     data=await data.find().toArray();
+//     console.log(data);
+// }
+// main();
+
+// // getData().then((resp)=>{
+// //     resp.find({brand: 'redmi'}).toArray().then((data)=>{
+// //         console.log(data)
+// //     })
+// // })
+
+
+const { default: mongoose } = require('mongoose');
+const mangoose = require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/e-com")
+const  Productsh = new mongoose.Schema({
+    name:String,
+    price:Number,
+    brand:String
+}); 
+
+const Saveindb = async ()=>{
+    const productModel = await mongoose.model('Products',Productsh);
+    let data = new productModel({name:"note 8",price:500,brand:"redmi "});
+    let result = await data.save();
+    console.log(result);
+}
+
+
+const updateIndb=async()=>{
+    const Product = mongoose.model('Products',Productsh);
+    let data = await Product.updateOne(
+        {name:"note 8"},
+        {
+            $set:{price:700}
+        }
+        
+    )
     console.log(data);
 }
-main();
-
-// getData().then((resp)=>{
-//     resp.find({brand: 'redmi'}).toArray().then((data)=>{
-//         console.log(data)
-//     })
-// })
+updateIndb()
