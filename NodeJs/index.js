@@ -249,28 +249,60 @@
 
 // serch API
 
-const express = require('express');
-require('./config');
-const Products =require('./product');
-const app=express();
+// const express = require('express');
+// require('./config');
+// const Products =require('./product');
+// const app=express();
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get('/serch/:key',async(req,resp)=>{
-    console.log(req.params.key);
-    let data = await Products.find
-    (
-        {
-            "$or":[
-                // {"brand":{$regex:req.params.key}} ,
-                {"name":{$regex:req.params.key}},
-                {"price":{$regex:req.params.key}}
+// app.get('/serch/:key',async(req,resp)=>{
+//     console.log(req.params.key);
+//     let data = await Products.find
+//     (
+//         {
+//             "$or":[
+//                 // {"brand":{$regex:req.params.key}} ,
+//                 {"name":{$regex:req.params.key}},
+//                 {"price":{$regex:req.params.key}}
 
-            ]
-        }
-    )
-    resp.send(data)
-}) 
+//             ]
+//         }
+//     )
+//     resp.send(data)
+// }) 
 
 
-app.listen(4500);
+// app.listen(4500);
+
+
+// upload file
+
+// const express = require('express');
+// const multer = require('multer');
+// const app=express();
+
+// const upload = multer({
+//     storage:multer.diskStorage({
+//         destination:function(req,file,cb)
+//         {
+//             cb(null,"upload")
+//         },
+//         filename:function(req,file,cb)
+//         {
+//             cb(null,file.fieldname+"-"+Date.now()+".jpg")
+//         }
+//     })
+// }).single("user_file");
+// app.post("/upload",upload,(req,resp)=>{
+//     resp.send("file uploaded");
+// });
+
+// app.listen(5000);
+
+const os = require('os');
+// console.log(os.arch());
+// console.log(os.freemem()/(1024*1024*1024));
+// console.log(os.totalmem()/(1024*1024*1024));
+// console.log(os.hostname());
+console.log(os.userInfo());
