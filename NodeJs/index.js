@@ -193,32 +193,84 @@
 // // })
 
 
-const { default: mongoose } = require('mongoose');
-const mangoose = require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/e-com")
-const  Productsh = new mongoose.Schema({
-    name:String,
-    price:Number,
-    brand:String
-}); 
+// const { default: mongoose } = require('mongoose');
+// const mangoose = require('mongoose');
+// mongoose.connect("mongodb://127.0.0.1:27017/e-com")
+// const  Productsh = new mongoose.Schema({
+//     name:String,
+//     price:Number,
+//     brand:String
+// }); 
 
-const Saveindb = async ()=>{
-    const productModel = await mongoose.model('Products',Productsh);
-    let data = new productModel({name:"note 8",price:500,brand:"redmi "});
-    let result = await data.save();
-    console.log(result);
-}
+// const Saveindb = async ()=>{
+//     const productModel = await mongoose.model('Products',Productsh);
+//     let data = new productModel({name:"note 8",price:500,brand:"redmi "});
+//     let result = await data.save();
+//     console.log(result);
+// }
 
 
-const updateIndb=async()=>{
-    const Product = mongoose.model('Products',Productsh);
-    let data = await Product.updateOne(
-        {name:"note 8"},
-        {
-            $set:{price:700}
-        }
+// const updateIndb=async()=>{
+//     const Product = mongoose.model('Products',Productsh);
+//     let data = await Product.updateOne(
+//         {name:"note 8"},
+//         {
+//             $set:{price:700}
+//         }
         
+//     )
+//     console.log(data);
+// }
+// updateIndb()
+
+
+
+// const express = require('express');
+// require('./config');
+// const Products =require('./product');
+
+// const app = express();
+// app.use(express.json());
+// // app.post("/create",async (req,resp)=>{
+// //     let data= new Products(req.body);
+// //     let result = await data.save();
+// //     console.log(result);
+// //     resp.send(result);
+// // });
+
+// app.get("./item",async (req,resp)=>{
+//     let data =await Products.find();
+//     resp.send(data);    
+//     // console.log("done");
+// });
+
+// app.listen(4500);
+
+
+// serch API
+
+const express = require('express');
+require('./config');
+const Products =require('./product');
+const app=express();
+
+app.use(express.json());
+
+app.get('/serch/:key',async(req,resp)=>{
+    console.log(req.params.key);
+    let data = await Products.find
+    (
+        {
+            "$or":[
+                // {"brand":{$regex:req.params.key}} ,
+                {"name":{$regex:req.params.key}},
+                {"price":{$regex:req.params.key}}
+
+            ]
+        }
     )
-    console.log(data);
-}
-updateIndb()
+    resp.send(data)
+}) 
+
+
+app.listen(4500);
