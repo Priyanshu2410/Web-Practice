@@ -1,0 +1,87 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    background-color: rgb(183, 238, 238);
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.container{
+    width: 550px;
+    height: 450px;
+}
+.header{
+    font-size: 1.5rem;
+    border: 4px solid black;
+    color: blueviolet;
+    background-color: orange;
+    padding: 5px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.maincontent{
+    width: 100%;
+    height: 350px;
+    background-color: azure;
+    padding: 50px 60px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px;
+}
+
+.maincontent .text-area{
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.maincontent .person{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: red;
+    margin-top: 15px;
+}
+
+.new-btn{
+  --b: 3px;   
+  --s: .45em; 
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 35px;
+}
+
+.new-btn:hover,
+.new-btn:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.new-btn:active {
+  background: var(--color);
+  color: #fff;
+}

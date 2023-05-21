@@ -218,13 +218,16 @@
 // });
 
 
-const button = document.querySelector("#submit");
-const todolist = document.querySelector("#todo-list");
-const items = todolist.children;
+// const button = document.querySelector("#submit");
+// const todolist = document.querySelector("#todo-list");
+// const items = todolist.children;
 
-button.addEventListener("click",function(){
-    const NewItem = document.createElement("li");
-    NewItem.classList.add("Itea");
-    NewItem.innerText = "Iteam 3";
-    todolist.appendChild(NewItem);
-});
+// button.addEventListener("click",function(){
+//     const NewItem = document.createElement("li");
+//     NewItem.classList.add("Itea");
+//     NewItem.innerText = "Iteam 3";
+//     todolist.appendChild(NewItem);
+// });
+
+
+
