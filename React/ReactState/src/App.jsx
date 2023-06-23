@@ -1,3 +1,7 @@
+
+import "./App.css"
+import CourseForm from './courseForn';
+import CourseList from "./courseList";
 import React from "react";
 import { useState,useReducer,useMemo,useCallback,useEffect} from "react";
 
@@ -171,6 +175,8 @@ function App(){
       <UserForm />
       <useMemmoo />
       <UseEffectt />
+      <CourseForm/>
+      <CourseList />
     </div>
   )
 }
