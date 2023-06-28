@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="container min-h-screen bg-[url('images/image.png')] bg-center bg-cover px-2.5 py-3 relative">
+        <nav class="flex items-center mx-3">
+            <img src="images/logo.png" alt="" class="w-40 cursor-pointer">
+            <ul class="flex-1 text-center">
+                <li class="inline-block list-none px-5"><a class="text-white no-underline" href="#">Home</a></li>
+                <li class="inline-block list-none px-5"><a class="text-white no-underline" href="#">About</a></li>
+                <li class="inline-block list-none px-5"><a class="text-white no-underline" href="#">Contact</a></li>
+                <li class="inline-block list-none px-5"><a class="text-white no-underline" href="#">Features</a></li>
+            </ul>
+            <img src="images/cart.png" alt="" class="w-7 cursor-pointer">
+        </nav>
+        <div class="text-white mt-12 md:mt-48 ml-4 md:ml-11 max-w-xl text-center md:text-left">
+            <h1 class="text-3xl md:text-6xl font-semibold leading-normal">Grocerise<br>delivery in <span class="font-light text-yellow-300">15 min</span></h1>
+            <p class="text-sm md:text-base mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ad sed molestiae, eaque illo nostrum.</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start mt-4 md:mt-8 ml-4 md:ml-11 space-y-4 md:space-y-0 md:flex-row">
+            <a href="#" class="bg-yellow-300 rounded-3xl py-2 px-6 md:py-3 md:px-8 font-medium inline-block hover:bg-transparent hover:border-yellow-300 hover:text-white duration-300 hover:border border border-transparent">Order Now</a>
+            <a href="#" class="text-yellow-300 inline-block ml-6">Download App <span class="text-lg transform rotate-90 inline-block">&#10148;</span></a>
+        </div>
+        <img src="images/grocery-image.png" alt="" class="w-full md:w-1/2 absolute bottom-0 right-4 md:right-20 mt-8 md:mt-0">
+    </div>
+</body>
+
+</html>
