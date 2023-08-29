@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block start %}
+    <h1>
+        This is index page
+    </h1>
+    <table style="border-collapse: collapse" border="1">
+        <tr>
+          <th>S-no</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Can vote</th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}</td>
+          <td {% if people.age < 18 %} style="background-color: brown;" {% endif %} 
+          {% if people.age >= 18 %} style="background-color: 	#90EE90;" {% endif %}>
+            {% if people.age >= 18 %}
+            Yes
+            {% else %}
+            No
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <p>{{text|truncatechars:50}}</p>
+      <a href="/contect/">
+        contect
+      </a>
+      <a href="/about/">
+        About
+      </a>
+      
+{% endblock %}
