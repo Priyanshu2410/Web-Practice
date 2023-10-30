@@ -1,0 +1,146 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>innerHTML Example</title>
+</head>
+<body>
+    <div id="myDiv">This is some initial text.</div>
+
+    <button onclick="changeText()">Click me</button>
+
+    <script>
+        function changeText() {
+            // Get the element with the id "myDiv"
+            var element = document.getElementById("myDiv");
+
+            // Change the content of the element
+            element.innerHTML = "Text has been changed!";
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>document.write() Example</title>
+</head>
+<body>
+    <script>
+        // Write content to the document
+        document.write("<h1>Hello, World!</h1>");
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>window.alert() Example</title>
+</head>
+<body>
+    <button onclick="showAlert()">Click me</button>
+
+    <script>
+        function showAlert() {
+            // Display an alert dialog
+            window.alert("This is an alert message!");
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS to style the paragraphs initially */
+        #paragraph-1 {
+            background-color: lightblue;
+        }
+ 
+        #paragraph-2 {
+            text-transform: capitalize;
+        }
+        #paragraph-3{
+            color: red;
+        }
+    </style>
+    <title>Button Actions</title>
+</head>
+<body>
+    <p id="paragraph-1">This is paragraph 1.</p>
+    <p id="paragraph-2">This is paragraph 2.</p>
+
+    <button id="button-1">Change Background Color of Paragraph 1</button>
+    <button id="button-2">Change Case of Paragraph 2 to Upper Case</button>
+    <button id="button-3">Change Case of Paragraph </button>
+
+    <script>
+
+        // JavaScript to handle button click events
+        document.getElementById('button-1').addEventListener('click', function () {
+            // Change background color of paragraph-1
+            document.getElementById('paragraph-1').style.backgroundColor = 'lightgreen';
+        });
+
+        document.getElementById('button-2').addEventListener('click', function () {
+            // Change case of paragraph-2 to upper case
+            const paragraph2 = document.getElementById('paragraph-2');
+            paragraph2.textContent = paragraph2.textContent.toUpperCase();
+        });
+        document.getElementById('button-3').addEventListener('click',function(){
+            document.getElementById('paragraph-2').style.color='blue';
+        })
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            // Validate Mobile Number
+            const mobileNumber = document.getElementById('mobile').value;
+            const mobileRegex = /^[789]\d{9}$/;
+            
+            // Validate Password
+            const password = document.getElementById('password').value;
+            const passwordRegex = /^[A-Za-z].*[0-9]$/;
+            
+            // Check if both mobile number and password are valid
+            if (!mobileRegex.test(mobileNumber)) {
+                alert('Mobile number must start with 7, 8, or 9 and be exactly 10 digits.');
+                return false;
+            }
+            
+            if (!passwordRegex.test(password) || password.length < 7 || password.length > 15) {
+                alert('Password must begin with a letter (uppercase or lowercase), end with a digit, and be 7 to 15 characters long.');
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form onsubmit="return validateForm()">
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html> -->

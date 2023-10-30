@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions Open 2023</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            display: flex;
+            margin: auto;
+            height: 100%;
+            max-width: 500px;
+            border: 2px solid black;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #103f6d;
+            flex-direction: column;
+            padding: 20px 40px; 
+        }
+
+        .main-h {
+            color: white;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .inputfield {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%; /* Set width to 100% */
+            color: #333; /* Changed input text color to be more visible */
+        }
+
+        .inputfield::placeholder {
+            color: #ccc;
+        }
+
+        .inputfield:focus {
+            outline: none;
+            border-color: #103f6d;
+        }
+
+        .submit-btn {
+            background-color: #d79e2f;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%; /* Set width to 100% */
+            margin-top: 20px; /* Added margin for visual spacing */
+        }
+
+        .submit-btn:hover {
+            background-color: #e5be71;
+        }
+        .label-down{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="main-h">🎓 Admissions Open 2023</h1>
+        <div class="form-group">
+            <input class="inputfield" type="text" id="fullname" name="fullname" placeholder="Enter your name *" required>
+            <input class="inputfield" type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number *" required>
+            <input class="inputfield" type="email" id="email" name="email" placeholder="Enter your email *" required>
+            <select id="state" name="state" class="inputfield" required>
+                <option value="" disabled selected>Select your city</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <!-- Add more states as needed -->
+            </select>
+       
+            <select id="state" name="state" class="inputfield" required>
+                <option value="" disabled selected>Select your state</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <!-- Add more states as needed -->
+            </select>
+            <select id="state" name="state" class="inputfield" required>
+                <option value="" disabled selected>Select Level</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <!-- Add more states as needed -->
+            </select>
+            <select id="state" name="state" class="inputfield" required>
+                <option value="" disabled selected>Select your Program</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <!-- Add more states as needed -->
+            </select>
+            
+        </div>
+        <input type="checkbox" id="agree" name="agree" value="agree" required> 
+        <label class="label-down" >agree to receive information regarding my submitted enquiry by signing up on CVM University</label>
+        <button class="submit-btn">Submit</button>
+        
+    </div>
+</body>
+</html>

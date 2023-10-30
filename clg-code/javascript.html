@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <button onclick="clickFunction()">Button</button>
+    <h1 class="btn"></h1>
+
+    <script>
+
+        alert("Hello World!");
+        var cars = ["Saab", "Volvo", "BMW"];
+
+
+        document.getElementById("demo").innerHTML = cars;
+
+        confirm("are you sure? to run this program?")
+        const n = prompt("Enter a positive number: ");
+        function fibonacci(n) {
+            if (n <= 0) {
+                return [];
+            } else if (n === 1) {
+                return [0];
+            } else if (n === 2) {
+                return [0, 1];
+            } else {
+                const fibArray = fibonacci(n - 1);
+                fibArray.push(fibArray[fibArray.length - 1] + fibArray[fibArray.length - 2]);
+                return fibArray;
+            }
+        }
+        document.write("Fibonachi of " + n + " is " + fibonacci(n));
+
+        function clickFunction() {
+            const element = document.querySelector(".btn");
+
+            
+            if (element) {
+                element.textContent = "Priyanshu Patel";
+            } else {
+                console.error("Element with class 'btn' not found.");
+            }
+        }
+    </script>
+</body>
+
+</html>
